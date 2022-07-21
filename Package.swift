@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -18,10 +18,11 @@ let package = Package(
             targets: ["SVGKitSwift"]
         )
     ],
-    dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0"))
-    ],
     targets: [
+        .binaryTarget(
+            name: "CocoaLumberjack",
+            path: "CocoaLumberjack.xcframework"
+        ),
         .target(
             name: "SVGKit",
             dependencies: [
