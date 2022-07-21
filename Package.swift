@@ -18,11 +18,10 @@ let package = Package(
             targets: ["SVGKitSwift"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/Joingo/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0"))
+    ],
     targets: [
-        .binaryTarget(
-            name: "CocoaLumberjack",
-            path: "CocoaLumberjack.xcframework"
-        ),
         .target(
             name: "SVGKit",
             dependencies: [
